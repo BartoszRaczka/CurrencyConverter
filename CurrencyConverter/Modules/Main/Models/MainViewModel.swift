@@ -8,6 +8,13 @@
 
 import Foundation
 
-struct MainViewModel {
+class MainViewModel {
     
+    private let coordinator: Coordinator
+    private let currencyService: CurrencyService
+
+    init(coordinator: Coordinator, currencyService: CurrencyService) {
+        self.coordinator = coordinator
+        self.currencyService = currencyService
+    }
 }
