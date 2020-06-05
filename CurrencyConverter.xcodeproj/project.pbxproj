@@ -3,14 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		799EAD75E04C8AC7001BAE66 /* Pods_CurrencyConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BB1BA23D7067DAAE599CAD /* Pods_CurrencyConverter.framework */; };
+		FA0BE80E248AC886008C4713 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BE80D248AC886008C4713 /* MainViewModel.swift */; };
+		FA0BE811248AC9AC008C4713 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BE810248AC9AC008C4713 /* MainView.swift */; };
+		FA0BE813248AC9D8008C4713 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BE812248AC9D8008C4713 /* Coordinator.swift */; };
 		FA328CE8248814CF00EEC54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA328CE7248814CF00EEC54A /* AppDelegate.swift */; };
 		FA328CEA248814CF00EEC54A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA328CE9248814CF00EEC54A /* SceneDelegate.swift */; };
-		FA328CEC248814CF00EEC54A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA328CEB248814CF00EEC54A /* ViewController.swift */; };
+		FA328CEC248814CF00EEC54A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA328CEB248814CF00EEC54A /* MainViewController.swift */; };
 		FA328CEF248814CF00EEC54A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA328CED248814CF00EEC54A /* Main.storyboard */; };
 		FA328CF1248814D000EEC54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA328CF0248814D000EEC54A /* Assets.xcassets */; };
 		FA328CF4248814D000EEC54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA328CF2248814D000EEC54A /* LaunchScreen.storyboard */; };
@@ -20,10 +23,13 @@
 		07C50903F85484BC78C55EFB /* Pods-CurrencyConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.release.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.release.xcconfig"; sourceTree = "<group>"; };
 		39B5389236641E54FB85F041 /* Pods-CurrencyConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.debug.xcconfig"; sourceTree = "<group>"; };
 		D7BB1BA23D7067DAAE599CAD /* Pods_CurrencyConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0BE80D248AC886008C4713 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FA0BE810248AC9AC008C4713 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FA0BE812248AC9D8008C4713 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA328CE4248814CF00EEC54A /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA328CE7248814CF00EEC54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA328CE9248814CF00EEC54A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA328CEB248814CF00EEC54A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA328CEB248814CF00EEC54A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA328CEE248814CF00EEC54A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA328CF0248814D000EEC54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA328CF3248814D000EEC54A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,7 +54,6 @@
 				39B5389236641E54FB85F041 /* Pods-CurrencyConverter.debug.xcconfig */,
 				07C50903F85484BC78C55EFB /* Pods-CurrencyConverter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -58,6 +63,76 @@
 				D7BB1BA23D7067DAAE599CAD /* Pods_CurrencyConverter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA0BE806248AC76B008C4713 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA328CE7248814CF00EEC54A /* AppDelegate.swift */,
+				FA328CE9248814CF00EEC54A /* SceneDelegate.swift */,
+				FA0BE812248AC9D8008C4713 /* Coordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA0BE807248AC780008C4713 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA328CEB248814CF00EEC54A /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		FA0BE808248AC7CE008C4713 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FA328CED248814CF00EEC54A /* Main.storyboard */,
+				FA328CF0248814D000EEC54A /* Assets.xcassets */,
+				FA328CF2248814D000EEC54A /* LaunchScreen.storyboard */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FA0BE809248AC7E6008C4713 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BE80D248AC886008C4713 /* MainViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA0BE80A248AC7EF008C4713 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BE80C248AC848008C4713 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FA0BE80B248AC801008C4713 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA0BE80C248AC848008C4713 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BE80F248AC99B008C4713 /* Views */,
+				FA0BE807248AC780008C4713 /* MainViewController */,
+				FA0BE809248AC7E6008C4713 /* Models */,
+				FA0BE80B248AC801008C4713 /* Services */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FA0BE80F248AC99B008C4713 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BE810248AC9AC008C4713 /* MainView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FA328CDB248814CF00EEC54A = {
@@ -81,13 +156,10 @@
 		FA328CE6248814CF00EEC54A /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
-				FA328CE7248814CF00EEC54A /* AppDelegate.swift */,
-				FA328CE9248814CF00EEC54A /* SceneDelegate.swift */,
-				FA328CEB248814CF00EEC54A /* ViewController.swift */,
-				FA328CED248814CF00EEC54A /* Main.storyboard */,
-				FA328CF0248814D000EEC54A /* Assets.xcassets */,
-				FA328CF2248814D000EEC54A /* LaunchScreen.storyboard */,
 				FA328CF5248814D000EEC54A /* Info.plist */,
+				FA0BE808248AC7CE008C4713 /* Common */,
+				FA0BE806248AC76B008C4713 /* App */,
+				FA0BE80A248AC7EF008C4713 /* Modules */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -207,9 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA328CEC248814CF00EEC54A /* ViewController.swift in Sources */,
+				FA328CEC248814CF00EEC54A /* MainViewController.swift in Sources */,
 				FA328CE8248814CF00EEC54A /* AppDelegate.swift in Sources */,
+				FA0BE813248AC9D8008C4713 /* Coordinator.swift in Sources */,
 				FA328CEA248814CF00EEC54A /* SceneDelegate.swift in Sources */,
+				FA0BE811248AC9AC008C4713 /* MainView.swift in Sources */,
+				FA0BE80E248AC886008C4713 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
