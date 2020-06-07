@@ -12,7 +12,8 @@ import SnapKit
 
 class TitleView: UIView {
     
-    var titleLabel: UILabel!
+    private var button: UIButton!
+    private var viewModel: MainViewModel!
        
        override init(frame: CGRect) {
            super.init(frame: frame)
@@ -27,16 +28,21 @@ class TitleView: UIView {
         setupTitleLabel()
        }
     
-    private func setupTitleLabel() {
-        titleLabel = UILabel()
-        titleLabel.text = "asd "
-        titleLabel.font = UIFont.systemFont(ofSize: 120.0, weight: .bold)
-        addSubview(titleLabel)
-        
-        titleLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-            
-        }
+    @objc func didTapButton() {
         
     }
+    
+    private func setupTitleLabel() {
+        button = UIButton()
+        button.setTitle("Check currencies", for: .normal)
+        button.backgroundColor = .white
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+        addSubview(button)
+        
+        button.snp.makeConstraints { make in
+          make.edges.equalToSuperview()
+        }
+    }
+    
 }

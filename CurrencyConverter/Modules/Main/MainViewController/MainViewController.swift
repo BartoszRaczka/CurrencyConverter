@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+class MainViewController: UIViewController {
     
     private let viewModel: MainViewModel
     
@@ -23,7 +23,7 @@ final class MainViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .blue
+        view = MainView()
     }
 
 }
