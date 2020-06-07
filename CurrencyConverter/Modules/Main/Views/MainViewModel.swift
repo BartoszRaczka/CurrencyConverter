@@ -26,7 +26,7 @@ class MainViewModel {
 //                        self?.coordinator.showJokeView(with: joke)
 //
 //                    case .failure:
-//                        print("Failed to retrieve a joke")
+//                        print("Failed to retrieve a currencies")
 //                    }
 //                    self?.onShowLoader?(false)
 //                }
