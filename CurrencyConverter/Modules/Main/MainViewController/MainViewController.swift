@@ -23,7 +23,7 @@ final class MainViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .cyan
+        view.backgroundColor = .blue
     }
 
 }
