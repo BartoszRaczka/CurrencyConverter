@@ -23,7 +23,7 @@ class MainViewModel {
 //                DispatchQueue.main.async {
 //                    switch result {
 //                    case .success(let joke):
-//                        self?.coordinator.showJokeView(with: joke)
+//                        self?.coordinator.showCurrencies(with: currencies)
 //
 //                    case .failure:
 //                        print("Failed to retrieve a currencies")
@@ -32,5 +32,5 @@ class MainViewModel {
 //                }
 //            }
 //    }
-    
+//    
 }
