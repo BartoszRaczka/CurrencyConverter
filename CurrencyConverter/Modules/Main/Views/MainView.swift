@@ -11,7 +11,7 @@ import UIKit
 
 class MainView: UIView {
     
-    var titleView: TitleView!
+    var button: ButtonView!
     
 //    var viewModel: MainViewModel
     
@@ -27,10 +27,10 @@ class MainView: UIView {
     }
     
     private func setupTitleLabel() {
-        titleView = TitleView()
-        addSubview(titleView)
+        button = ButtonView()
+        addSubview(button)
         
-        titleView.snp.makeConstraints { (make) in
+        button.snp.makeConstraints { (make) in
             make.leading.equalTo(self)
             make.trailing.equalTo(self)
             make.top.equalTo(snp.top).offset(60.0)
