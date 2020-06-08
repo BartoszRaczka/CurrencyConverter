@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class TitleView: UIView {
+class ButtonView: UIView {
     
     private var button: UIButton!
     private var viewModel: MainViewModel!
@@ -25,14 +25,14 @@ class TitleView: UIView {
        
        convenience init() {
            self.init(frame: .zero)
-        setupTitleLabel()
+        setupButton()
        }
     
     @objc func didTapButton() {
         
     }
     
-    private func setupTitleLabel() {
+    private func setupButton() {
         button = UIButton()
         button.setTitle("Check currencies", for: .normal)
         button.backgroundColor = .white
