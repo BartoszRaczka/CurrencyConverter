@@ -10,4 +10,6 @@ import Foundation
 
 struct CurrencyViewModel {
     
+    let currencies: CurrencyModel
+    
 }

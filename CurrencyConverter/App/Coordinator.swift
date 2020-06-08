@@ -28,4 +28,11 @@ final class Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
+    
+    func showCurrencies(with currencies: CurrencyModel) {
+        let viewModel = CurrencyViewModel(currencies: currencies)
+        let viewController = CurrencyViewController(with: viewModel)
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
