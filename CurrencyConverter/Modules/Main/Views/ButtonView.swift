@@ -29,7 +29,7 @@ class ButtonView: UIView {
        }
     
     @objc func didTapButton() {
-        
+        viewModel.
     }
     
     private func setupButton() {

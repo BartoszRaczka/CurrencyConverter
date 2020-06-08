@@ -18,19 +18,19 @@ class MainViewModel {
         self.currencyService = currencyService
     }
     
-//    func showCurrencies() {
-//        currencyService.showCurrencies { [weak self] result in
-//                DispatchQueue.main.async {
-//                    switch result {
-//                    case .success(let joke):
-//                        self?.coordinator.showCurrencies(with: currencies)
-//
-//                    case .failure:
-//                        print("Failed to retrieve a currencies")
-//                    }
-//                    self?.onShowLoader?(false)
-//                }
-//            }
-//    }
-//
+    func showCurrencies() {
+        currencyService.getCurrencies { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let currencies):
+                        self?.coordinator.showCurrencies(with: currencies)
+
+                    case .failure:
+                        print("Failed to retrieve a currencies")
+                    }
+                    self?.onShowLoader?(false)
+                }
+            }
+    }
+
 }
