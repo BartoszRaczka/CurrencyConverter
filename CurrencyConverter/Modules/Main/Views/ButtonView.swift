@@ -35,7 +35,8 @@ class ButtonView: UIView {
     private func setupButton() {
         button = UIButton()
         button.setTitle("Check currencies", for: .normal)
-        button.backgroundColor = .white
+        button.backgroundColor = .black
+        
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         
         addSubview(button)

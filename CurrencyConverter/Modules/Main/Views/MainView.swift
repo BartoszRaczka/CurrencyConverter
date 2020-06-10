@@ -11,20 +11,33 @@ import UIKit
 
 class MainView: UIView {
     
-    var button: ButtonView!
+    private var button: ButtonView!
+    private var indicator: UIActivityIndicatorView!
     
-//    var viewModel: MainViewModel
+    private var viewModel: MainViewModel!
     
     override init(frame: CGRect) {
+        
         super.init(frame: .zero)
-//        viewModel = MainViewModel
+        
         setupTitleLabel()
-        backgroundColor = .white
+//        bindActions()
+//        setupIndicator()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    private func bindActions() {
+//           viewModel.onShowLoader = { [weak self] showLoader in
+//               if showLoader {
+//                   self?.indicator.startAnimating()
+//               } else {
+//                   self?.indicator.stopAnimating()
+//               }
+//           }
+//       }
     
     private func setupTitleLabel() {
         button = ButtonView()
@@ -37,4 +50,14 @@ class MainView: UIView {
             make.height.equalTo(60.0)
         }
     }
+    
+//    private func setupIndicator() {
+//        indicator = UIActivityIndicatorView(style: .large)
+//        indicator.hidesWhenStopped = true
+//        indicator.snp.makeConstraints { (make) in
+//
+//        }
+//    }
+//
 }
+
