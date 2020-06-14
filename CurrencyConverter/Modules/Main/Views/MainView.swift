@@ -11,16 +11,18 @@ import UIKit
 
 class MainView: UIView {
     
-    private var button: ButtonView!
+    private var button: UIButton!
     private var indicator: UIActivityIndicatorView!
     
-    private var viewModel: MainViewModel!
+    var onButtonTapped: (() -> Void)?
+    
+    private var viewModel: MainViewModel
     
     override init(frame: CGRect) {
         
         super.init(frame: .zero)
         
-        setupTitleLabel()
+        setupButton()
 //        bindActions()
 //        setupIndicator()
     }
@@ -39,17 +41,19 @@ class MainView: UIView {
 //           }
 //       }
     
-    private func setupTitleLabel() {
-        button = ButtonView()
-        addSubview(button)
-        
-        button.snp.makeConstraints { (make) in
-            make.leading.equalTo(self)
-            make.trailing.equalTo(self)
-            make.top.equalTo(snp.top).offset(60.0)
-            make.height.equalTo(60.0)
-        }
-    }
+     private func setupButton() {
+           button = UIButton()
+           button.setTitle("Check currencies", for: .normal)
+           button.backgroundColor = .black
+           
+           button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+           
+           addSubview(button)
+           
+           button.snp.makeConstraints { make in
+             make.edges.equalToSuperview()
+           }
+       }
     
 //    private func setupIndicator() {
 //        indicator = UIActivityIndicatorView(style: .large)
