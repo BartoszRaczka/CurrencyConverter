@@ -33,7 +33,7 @@ final class CurrencyService: CurrencyServiceProtocol {
                 let data = data,
                 let currencies = try? JSONDecoder().decode(CurrencyModel.self, from: data)
             else {
-                completion(.failure(error!))
+                completion(.failure(error ?? NSError()))
                 return
             }
             

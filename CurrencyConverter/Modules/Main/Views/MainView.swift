@@ -15,10 +15,10 @@ class MainView: UIView {
     private var button: UIButton!
     private var indicator: UIActivityIndicatorView!
     
-    private var viewModel: MainViewModel!
+    private var viewModel: MainViewModel
     
-    override init(frame: CGRect) {
-        
+    init(with viewModel: MainViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         
         setupButton()
@@ -54,7 +54,7 @@ class MainView: UIView {
            addSubview(button)
            
            button.snp.makeConstraints { make in
-            make.top.equalTo(60)
+            make.top.equalToSuperview().offset(60)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.width.equalTo(200)

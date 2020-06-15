@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = MainView()
+        view = MainView(with: viewModel)
     }
 
 }
