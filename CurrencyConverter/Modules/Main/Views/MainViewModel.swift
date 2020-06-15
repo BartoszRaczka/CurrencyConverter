@@ -13,7 +13,9 @@ class MainViewModel {
     private let coordinator: Coordinator
     private let currencyService: CurrencyServiceProtocol
     
-     var onShowLoader: ((Bool) -> Void)?
+    var onButtonTapped: (() -> Void)?
+    
+    var onShowLoader: ((Bool) -> Void)?
 
     init(coordinator: Coordinator, currencyService: CurrencyServiceProtocol) {
         self.coordinator = coordinator
@@ -30,7 +32,7 @@ class MainViewModel {
                     case .failure:
                         print("Failed to retrieve a currencies")
                     }
-                    self?.onShowLoader?(false)
+//                    self?.onShowLoader?(false)
                 }
             }
     }

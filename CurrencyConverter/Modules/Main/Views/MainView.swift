@@ -7,14 +7,13 @@
 //
 
 import Foundation
+import SnapKit
 import UIKit
 
 class MainView: UIView {
     
     private var button: UIButton!
     private var indicator: UIActivityIndicatorView!
-    
-    var onButtonTapped: (() -> Void)?
     
     private var viewModel: MainViewModel
     
@@ -31,22 +30,22 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    private func bindActions() {
-//           viewModel.onShowLoader = { [weak self] showLoader in
-//               if showLoader {
-//                   self?.indicator.startAnimating()
-//               } else {
-//                   self?.indicator.stopAnimating()
-//               }
-//           }
-//       }
+    private func bindActions() {
+           viewModel.onShowLoader = { [weak self] showLoader in
+               if showLoader {
+                   self?.indicator.startAnimating()
+               } else {
+                   self?.indicator.stopAnimating()
+               }
+           }
+       }
     
      private func setupButton() {
            button = UIButton()
            button.setTitle("Check currencies", for: .normal)
            button.backgroundColor = .black
            
-           button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(viewModel.onButtonTapped), for: .touchUpInside)
            
            addSubview(button)
            
