@@ -15,7 +15,7 @@ class MainView: UIView {
     private var button: UIButton!
     private var indicator: UIActivityIndicatorView!
     
-    private var viewModel: MainViewModel
+    private var viewModel: MainViewModel!
     
     override init(frame: CGRect) {
         
@@ -40,17 +40,24 @@ class MainView: UIView {
            }
        }
     
+    @objc func didTapButton() {
+        viewModel.showCurrencies()
+    }
+    
      private func setupButton() {
            button = UIButton()
            button.setTitle("Check currencies", for: .normal)
            button.backgroundColor = .black
            
-        button.addTarget(self, action: #selector(viewModel.onButtonTapped), for: .touchUpInside)
+            button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
            
            addSubview(button)
            
            button.snp.makeConstraints { make in
-             make.edges.equalToSuperview()
+            make.top.equalTo(60)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(200)
            }
        }
     

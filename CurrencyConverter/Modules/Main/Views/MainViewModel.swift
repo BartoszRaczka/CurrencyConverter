@@ -23,6 +23,7 @@ class MainViewModel {
     }
     
     func showCurrencies() {
+        
         currencyService.getCurrencies { [weak self] result in
                 DispatchQueue.main.async {
                     switch result {
