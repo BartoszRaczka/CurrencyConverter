@@ -11,5 +11,18 @@ import UIKit
 
 class CurrencyView: UIView {
     
+    let viewModel: CurrencyViewModel
+    
+    init(with viewModel: CurrencyViewModel){
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     
 }
