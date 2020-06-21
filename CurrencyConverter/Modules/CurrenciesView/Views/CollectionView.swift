@@ -8,10 +8,18 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
-class CollectionView: UIView {
-    
-    var collectionView: UICollectionView!
+class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+   
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        return cv
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -20,4 +28,31 @@ class CollectionView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupCollectionView() {
+        addSubview(collectionView)
+        collectionView.backgroundColor = .white
+        
+        collectionView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+        }
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           return 10
+       }
+       
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+           cell.backgroundColor = .black
+           return cell
+       }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+          return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2.5)
+      }
+    
 }
