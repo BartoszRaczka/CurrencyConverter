@@ -23,6 +23,7 @@ class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelega
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        setupCollectionView()
     }
     
     required init?(coder: NSCoder) {
