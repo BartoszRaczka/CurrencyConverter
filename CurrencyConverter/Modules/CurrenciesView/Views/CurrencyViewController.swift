@@ -24,7 +24,8 @@ class CurrencyViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = CurrencyView(with: viewModel)
+//        view = CurrencyView(with: viewModel)
+        view.backgroundColor = .white
         
     }
 }

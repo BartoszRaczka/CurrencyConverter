@@ -10,5 +10,5 @@ import Foundation
 
 struct CurrencyModel: Codable {
     
-    let currencies: String
+    let currencies: [String: String]
 }
