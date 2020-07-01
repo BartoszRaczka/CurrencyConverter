@@ -25,6 +25,7 @@
 		FA38C6C1248DA14500C3C170 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C6C0248DA14500C3C170 /* CollectionViewModel.swift */; };
 		FA38C6C3248DA16700C3C170 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C6C2248DA16700C3C170 /* CurrencyViewModel.swift */; };
 		FA6DD276248D8DAB00483722 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DD275248D8DAB00483722 /* CurrencyModel.swift */; };
+		FACAD44824AD27290001E76B /* CustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACAD44724AD27290001E76B /* CustomCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FA38C6C0248DA14500C3C170 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		FA38C6C2248DA16700C3C170 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		FA6DD275248D8DAB00483722 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		FACAD44724AD27290001E76B /* CustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				FA38C6BE248DA13500C3C170 /* CollectionView.swift */,
 				FA38C6C0248DA14500C3C170 /* CollectionViewModel.swift */,
 				FA1E231024AB872F00F9194A /* CustomCell.swift */,
+				FACAD44724AD27290001E76B /* CustomCellViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				FA38C6BF248DA13500C3C170 /* CollectionView.swift in Sources */,
 				FA0BE815248B1171008C4713 /* CurrencyService.swift in Sources */,
 				FA6DD276248D8DAB00483722 /* CurrencyModel.swift in Sources */,
+				FACAD44824AD27290001E76B /* CustomCellViewModel.swift in Sources */,
 				FA38C6BB248DA0C100C3C170 /* CurrencyView.swift in Sources */,
 				FA0BE811248AC9AC008C4713 /* MainView.swift in Sources */,
 				FA0BE80E248AC886008C4713 /* MainViewModel.swift in Sources */,

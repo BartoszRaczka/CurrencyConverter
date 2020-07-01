@@ -30,7 +30,11 @@ class CustomCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupLabel() {
+    func setup(with viewModel: CustomCellViewModel) {
+        cellLabel.text = viewModel.title
+    }
+    
+    private func setupLabel() {
         addSubview(cellLabel)
         cellLabel.textColor = .white
         cellLabel.text = "asd"
@@ -39,4 +43,5 @@ class CustomCell: UICollectionViewCell {
             make.edges.equalToSuperview()
         }
     }
+    
 }

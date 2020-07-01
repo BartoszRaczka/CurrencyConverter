@@ -12,8 +12,7 @@ import SnapKit
 
 class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
-    let collectionViewCells = [CurrencyModel]()
-    var indexPath: IndexPath?
+    let viewModel: CollectionViewModel
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -24,7 +23,8 @@ class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelega
         return cv
     }()
     
-    override init(frame: CGRect) {
+    init(with viewModel: CollectionViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         setupCollectionView()
     }
@@ -46,22 +46,20 @@ class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-       }
+        return viewModel.customCellViewModels.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CustomCell else {
+            return UICollectionViewCell()
+        }
+        cell.setup(with: viewModel.customCellViewModels[indexPath.row])
         cell.backgroundColor = .black
         return cell
        }
-    
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
           return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2.5)
       }
-    
-    func setup(model: CurrencyViewModel) {
-        
-    }
     
 }

@@ -14,7 +14,7 @@ class CurrencyView: UIView {
     
     let viewModel: CurrencyViewModel
     
-    let collectionView = CollectionView()
+    var collectionView: CollectionView!
     
     init(with viewModel: CurrencyViewModel){
         self.viewModel = viewModel
@@ -27,6 +27,7 @@ class CurrencyView: UIView {
     }
     
     func setupCollectionView() {
+        collectionView = CollectionView(with: CollectionViewModel(currencyModel: viewModel.currencies))
         addSubview(collectionView)
         collectionView.backgroundColor = .white
         
