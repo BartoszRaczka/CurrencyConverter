@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import UIKit
 
-class CollectionViewModel: UIView {
+struct CollectionViewModel {
+    
+    var currencies: CurrencyModel
     
 }

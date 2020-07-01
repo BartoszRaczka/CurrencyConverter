@@ -12,12 +12,15 @@ import SnapKit
 
 class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
+    let collectionViewCells = [CurrencyModel]()
+    var indexPath: IndexPath?
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
         return cv
     }()
     
@@ -43,17 +46,22 @@ class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           return 10
+        return 10
        }
-       
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-           cell.backgroundColor = .black
-           return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
+        
+        cell.backgroundColor = .black
+        return cell
        }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
           return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2.5)
       }
+    
+    func setup(model: CurrencyViewModel) {
+        
+    }
     
 }
