@@ -26,6 +26,7 @@
 		FA38C6C3248DA16700C3C170 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C6C2248DA16700C3C170 /* CurrencyViewModel.swift */; };
 		FA6DD276248D8DAB00483722 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DD275248D8DAB00483722 /* CurrencyModel.swift */; };
 		FACAD44824AD27290001E76B /* CustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACAD44724AD27290001E76B /* CustomCellViewModel.swift */; };
+		FAD1003E24AF6541003B0920 /* ExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1003D24AF6541003B0920 /* ExchangeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FA38C6C2248DA16700C3C170 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		FA6DD275248D8DAB00483722 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		FACAD44724AD27290001E76B /* CustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewModel.swift; sourceTree = "<group>"; };
+		FAD1003D24AF6541003B0920 /* ExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6DD275248D8DAB00483722 /* CurrencyModel.swift */,
+				FAD1003D24AF6541003B0920 /* ExchangeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				FA328CEC248814CF00EEC54A /* MainViewController.swift in Sources */,
 				FA38C6C3248DA16700C3C170 /* CurrencyViewModel.swift in Sources */,
 				FA38C6BD248DA0DC00C3C170 /* CurrencyViewController.swift in Sources */,
+				FAD1003E24AF6541003B0920 /* ExchangeModel.swift in Sources */,
 				FA38C6C1248DA14500C3C170 /* CollectionViewModel.swift in Sources */,
 				FA328CE8248814CF00EEC54A /* AppDelegate.swift in Sources */,
 				FA0BE813248AC9D8008C4713 /* Coordinator.swift in Sources */,
