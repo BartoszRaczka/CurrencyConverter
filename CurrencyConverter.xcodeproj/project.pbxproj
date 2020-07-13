@@ -30,6 +30,7 @@
 		FA653F0524B523D700B7DBA9 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA653F0424B523D700B7DBA9 /* ExchangeViewController.swift */; };
 		FA6DD276248D8DAB00483722 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DD275248D8DAB00483722 /* CurrencyModel.swift */; };
 		FACAD44824AD27290001E76B /* CustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACAD44724AD27290001E76B /* CustomCellViewModel.swift */; };
+		FACFC3BA24BCB0FC005863F0 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFC3B924BCB0FC005863F0 /* SecondViewModel.swift */; };
 		FAD1003E24AF6541003B0920 /* ExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1003D24AF6541003B0920 /* ExchangeModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		FA653F0424B523D700B7DBA9 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		FA6DD275248D8DAB00483722 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		FACAD44724AD27290001E76B /* CustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewModel.swift; sourceTree = "<group>"; };
+		FACFC3B924BCB0FC005863F0 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		FAD1003D24AF6541003B0920 /* ExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 				FA653F0224B523B200B7DBA9 /* ExchangeView.swift */,
 				FA653F0424B523D700B7DBA9 /* ExchangeViewController.swift */,
 				FA653F0024B51D7B00B7DBA9 /* ExchangeViewModel.swift */,
+				FACFC3B924BCB0FC005863F0 /* SecondViewModel.swift */,
 			);
 			path = Exchange;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				FA38C6BB248DA0C100C3C170 /* CurrencyView.swift in Sources */,
 				FA653F0524B523D700B7DBA9 /* ExchangeViewController.swift in Sources */,
 				FA0BE811248AC9AC008C4713 /* MainView.swift in Sources */,
+				FACFC3BA24BCB0FC005863F0 /* SecondViewModel.swift in Sources */,
 				FA0BE80E248AC886008C4713 /* MainViewModel.swift in Sources */,
 				FA38C6B9248DA09400C3C170 /* MainModel.swift in Sources */,
 				FA653F0124B51D7B00B7DBA9 /* ExchangeViewModel.swift in Sources */,

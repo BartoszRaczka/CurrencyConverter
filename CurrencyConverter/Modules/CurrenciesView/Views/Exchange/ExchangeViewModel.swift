@@ -11,4 +11,5 @@ import Foundation
 struct ExchangeViewModel: Codable {
 
     let exchange: ExchangeModel
+    
 }

@@ -35,4 +35,11 @@ final class Coordinator {
         
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func showExchange(with rates: ExchangeModel) {
+        let viewModel = ExchangeViewModel(exchange: rates)
+        let viewController = ExchangeViewController(with: viewModel)
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }

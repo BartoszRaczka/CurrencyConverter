@@ -22,7 +22,7 @@ class MainView: UIView {
         super.init(frame: .zero)
         
         setupButton()
-//        bindActions()
+        bindActions()
 //        setupIndicator()
     }
     
@@ -61,13 +61,13 @@ class MainView: UIView {
            }
        }
     
-//    private func setupIndicator() {
-//        indicator = UIActivityIndicatorView(style: .large)
-//        indicator.hidesWhenStopped = true
-//        indicator.snp.makeConstraints { (make) in
-//
-//        }
-//    }
-//
+    private func setupIndicator() {
+        indicator = UIActivityIndicatorView(style: .large)
+        indicator.hidesWhenStopped = true
+        indicator.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+
 }
 
