@@ -168,6 +168,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FA1F9B6724C0BE7F005416DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FACFC3B924BCB0FC005863F0 /* SecondViewModel.swift */,
+				FA653F0224B523B200B7DBA9 /* ExchangeView.swift */,
+				FA653F0024B51D7B00B7DBA9 /* ExchangeViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA1F9B6824C0BE99005416DF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA653F0424B523D700B7DBA9 /* ExchangeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FA328CDB248814CF00EEC54A = {
 			isa = PBXGroup;
 			children = (
@@ -228,10 +246,8 @@
 		FA653F0624B523EC00B7DBA9 /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
-				FA653F0224B523B200B7DBA9 /* ExchangeView.swift */,
-				FA653F0424B523D700B7DBA9 /* ExchangeViewController.swift */,
-				FA653F0024B51D7B00B7DBA9 /* ExchangeViewModel.swift */,
-				FACFC3B924BCB0FC005863F0 /* SecondViewModel.swift */,
+				FA1F9B6724C0BE7F005416DF /* Views */,
+				FA1F9B6824C0BE99005416DF /* ViewControllers */,
 			);
 			path = Exchange;
 			sourceTree = "<group>";

@@ -23,6 +23,7 @@ class MainViewModel {
     }
     
     func showCurrencies() {
+        onShowLoader?(true)
         
         currencyService.getCurrencies { [weak self] result in
                 DispatchQueue.main.async {
@@ -33,7 +34,7 @@ class MainViewModel {
                     case .failure:
                         print("Failed to retrieve a currencies")
                     }
-//                    self?.onShowLoader?(false)
+                    self?.onShowLoader?(false)
                 }
             }
     }

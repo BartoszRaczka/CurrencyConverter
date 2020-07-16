@@ -23,12 +23,13 @@ class MainView: UIView {
         
         setupButton()
         bindActions()
-//        setupIndicator()
+        setupIndicator()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func bindActions() {
            viewModel.onShowLoader = { [weak self] showLoader in
@@ -44,7 +45,7 @@ class MainView: UIView {
         viewModel.showCurrencies()
     }
     
-     private func setupButton() {
+      func setupButton() {
            button = UIButton()
            button.setTitle("Check currencies", for: .normal)
            button.backgroundColor = .black
@@ -65,7 +66,7 @@ class MainView: UIView {
         indicator = UIActivityIndicatorView(style: .large)
         indicator.hidesWhenStopped = true
         indicator.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(indicator.snp_margins)
         }
     }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MainViewController: UIViewController {
     
     private let viewModel: MainViewModel
@@ -24,6 +25,11 @@ class MainViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = MainView(with: viewModel)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 
 }
