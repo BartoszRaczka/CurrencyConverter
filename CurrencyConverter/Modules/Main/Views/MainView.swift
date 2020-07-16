@@ -65,10 +65,13 @@ class MainView: UIView {
     private func setupIndicator() {
         indicator = UIActivityIndicatorView(style: .large)
         indicator.hidesWhenStopped = true
+        addSubview(indicator)
+        
         indicator.snp.makeConstraints { (make) in
-            make.edges.equalTo(indicator.snp_margins)
+            make.edges.equalToSuperview()
         }
     }
 
 }
 
+// stworzyć tableView, zmienić funckje didtapbutton, 

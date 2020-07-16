@@ -11,5 +11,6 @@ import Foundation
 struct CurrencyViewModel {
     
     let currencies: CurrencyModel
+    let collectionViewModel: CollectionViewModel
     
 }

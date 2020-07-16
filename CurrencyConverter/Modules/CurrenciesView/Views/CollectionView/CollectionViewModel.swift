@@ -12,8 +12,13 @@ struct CollectionViewModel {
     
 //    var currencies: [String]
     var customCellViewModels: [CustomCellViewModel]
+    private let currencyType: CurrencyType
+    private let coordinator: Coordinator
     
-    init(currencyModel: CurrencyModel) {
+    
+    init(currencyModel: CurrencyModel, currencyType: CurrencyType, coordinator: Coordinator) {
+        self.currencyType = currencyType
+        self.coordinator = coordinator
 //        customCellViewModels = [CustomCellViewModel]()
 //        currencies = currencyModel.currencies
 //            .map { $0.key }
@@ -32,7 +37,7 @@ struct CollectionViewModel {
         
         customCellViewModels = currencyModel.currencies
             .map { (key, value) in
-                return value
+                return key
 //          .map { $0.value }
             }
             .sorted()
@@ -40,6 +45,11 @@ struct CollectionViewModel {
                 return CustomCellViewModel(title: currency)
 //          .map { CustomCellViewmodel(title: $0) }
             }
+    }
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        let currency = customCellViewModels[indexPath.row].title
+        coordinator.didSelectCurrency(currency, currencyType: currencyType)
     }
     
 }

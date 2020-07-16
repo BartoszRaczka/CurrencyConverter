@@ -12,7 +12,7 @@ import SnapKit
 
 class CurrencyView: UIView {
     
-    let viewModel: CurrencyViewModel
+    let viewModel: CurrencyViewModel //viewmodel.collectionViewModel
     
     var collectionView: CollectionView!
     
@@ -27,7 +27,7 @@ class CurrencyView: UIView {
     }
     
     func setupCollectionView() {
-        collectionView = CollectionView(with: CollectionViewModel(currencyModel: viewModel.currencies))
+        collectionView = CollectionView(with: viewModel.collectionViewModel)
         addSubview(collectionView)
         collectionView.backgroundColor = .white
         

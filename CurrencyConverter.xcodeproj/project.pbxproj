@@ -13,6 +13,7 @@
 		FA0BE813248AC9D8008C4713 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BE812248AC9D8008C4713 /* Coordinator.swift */; };
 		FA0BE815248B1171008C4713 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BE814248B1171008C4713 /* CurrencyService.swift */; };
 		FA1E231124AB872F00F9194A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E231024AB872F00F9194A /* CustomCell.swift */; };
+		FA2D7FCD24C0C80F00812CC2 /* CurrencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D7FCC24C0C80F00812CC2 /* CurrencyType.swift */; };
 		FA328CE8248814CF00EEC54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA328CE7248814CF00EEC54A /* AppDelegate.swift */; };
 		FA328CEA248814CF00EEC54A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA328CE9248814CF00EEC54A /* SceneDelegate.swift */; };
 		FA328CEC248814CF00EEC54A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA328CEB248814CF00EEC54A /* MainViewController.swift */; };
@@ -43,6 +44,7 @@
 		FA0BE812248AC9D8008C4713 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA0BE814248B1171008C4713 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		FA1E231024AB872F00F9194A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		FA2D7FCC24C0C80F00812CC2 /* CurrencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyType.swift; sourceTree = "<group>"; };
 		FA328CE4248814CF00EEC54A /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA328CE7248814CF00EEC54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA328CE9248814CF00EEC54A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				FA328CE7248814CF00EEC54A /* AppDelegate.swift */,
 				FA328CE9248814CF00EEC54A /* SceneDelegate.swift */,
 				FA0BE812248AC9D8008C4713 /* Coordinator.swift */,
+				FA2D7FCC24C0C80F00812CC2 /* CurrencyType.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				FA1E231124AB872F00F9194A /* CustomCell.swift in Sources */,
 				FA38C6BF248DA13500C3C170 /* CollectionView.swift in Sources */,
 				FA0BE815248B1171008C4713 /* CurrencyService.swift in Sources */,
+				FA2D7FCD24C0C80F00812CC2 /* CurrencyType.swift in Sources */,
 				FA6DD276248D8DAB00483722 /* CurrencyModel.swift in Sources */,
 				FACAD44824AD27290001E76B /* CustomCellViewModel.swift in Sources */,
 				FA38C6BB248DA0C100C3C170 /* CurrencyView.swift in Sources */,

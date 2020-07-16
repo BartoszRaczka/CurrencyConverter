@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
    
     let viewModel: CollectionViewModel
     
@@ -61,5 +61,10 @@ class CollectionView: UIView, UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
           return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2.5)
       }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItem(at: indexPath)
+    }
+    
     
 }

@@ -13,6 +13,8 @@ final class Coordinator {
     private let window: UIWindow
     private var navigationController: UINavigationController!
     
+    var onCurrencySelected: ((String, CurrencyType) -> Void)?
+    
     init(window: UIWindow) {
         self.window = window
     }
@@ -29,8 +31,9 @@ final class Coordinator {
         window.makeKeyAndVisible()
     }
     
-    func showCurrencies(with currencies: CurrencyModel) {
-        let viewModel = CurrencyViewModel(currencies: currencies)
+    func showCurrencies(with currencies: CurrencyModel, currencyType: CurrencyType) {
+        let collectionViewModel = CollectionViewModel(currencyModel: currencies, currencyType: currencyType, coordinator: self)
+        let viewModel = CurrencyViewModel(currencies: currencies, collectionViewModel: collectionViewModel)
         let viewController = CurrencyViewController(with: viewModel)
         
         navigationController.pushViewController(viewController, animated: true)
@@ -41,5 +44,10 @@ final class Coordinator {
         let viewController = ExchangeViewController(with: viewModel)
         
         navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func didSelectCurrency(_ currency: String, currencyType: CurrencyType) {
+        navigationController.popViewController(animated: true)
+        onCurrencySelected?(currency, currencyType)
     }
 }

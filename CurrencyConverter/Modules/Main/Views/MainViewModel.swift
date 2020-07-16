@@ -13,6 +13,9 @@ class MainViewModel {
     private let coordinator: Coordinator
     private let currencyService: CurrencyServiceProtocol
     
+    var fromCurrency: String?
+    var toCurrency: String?
+    
     var onButtonTapped: (() -> Void)?
     
     var onShowLoader: ((Bool) -> Void)?
@@ -20,6 +23,7 @@ class MainViewModel {
     init(coordinator: Coordinator, currencyService: CurrencyServiceProtocol) {
         self.coordinator = coordinator
         self.currencyService = currencyService
+        bindActions()
     }
     
     func showCurrencies() {
@@ -37,6 +41,17 @@ class MainViewModel {
                     self?.onShowLoader?(false)
                 }
             }
+    }
+    
+    private func bindActions() {
+        coordinator.onCurrencySelected = { [weak self] currency, currencyType in
+            switch currencyType {
+            case .from:
+                self?.fromCurrency = currency
+            case .to:
+                self?.toCurrency = currency
+            }
+        }
     }
 
 }
