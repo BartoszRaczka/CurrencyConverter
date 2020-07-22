@@ -16,6 +16,7 @@ class ExchangeService: ExchangeServiceProtocol {
     
     func getExchange(_ completion: @escaping ((Result<ExchangeModel, Error>) -> Void)) {
 
+        
         let headers = [
             "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
             "x-rapidapi-key": "5c120eaad7msh654deae5bb75436p17b7e1jsn4021a19a4ddb"

@@ -15,6 +15,8 @@ class MainView: UIView {
     private var button: UIButton!
     private var indicator: UIActivityIndicatorView!
     
+    private let tableView = UITableView() // zadeklarować i stworzyć instancję w setupie lepiej
+    
     private var viewModel: MainViewModel
     
     init(with viewModel: MainViewModel) {
@@ -24,6 +26,7 @@ class MainView: UIView {
         setupButton()
         bindActions()
         setupIndicator()
+        setupTableView()
     }
     
     required init?(coder: NSCoder) {
@@ -32,17 +35,20 @@ class MainView: UIView {
     
     
     private func bindActions() {
-           viewModel.onShowLoader = { [weak self] showLoader in
-               if showLoader {
-                   self?.indicator.startAnimating()
-               } else {
-                   self?.indicator.stopAnimating()
-               }
-           }
-       }
+        viewModel.onShowLoader = { [weak self] showLoader in
+            if showLoader {
+                self?.indicator.startAnimating()
+            } else {
+                self?.indicator.stopAnimating()
+            }
+        }
+        viewModel.onReloadData = { [weak self] in
+            self?.tableView.reloadData()
+        }
+   }
     
     @objc func didTapButton() {
-        viewModel.showCurrencies()
+        
     }
     
       func setupButton() {
@@ -72,6 +78,50 @@ class MainView: UIView {
         }
     }
 
+}
+
+extension MainView: UITableViewDataSource, UITableViewDelegate {
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        addSubview(tableView)
+        
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(button.snp.bottom)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        var title = "" 
+        if indexPath.row == 0 {
+            title = viewModel.fromCurrency ?? "Pick currency"
+        } else if indexPath.row == 1 {
+            title = viewModel.toCurrency ?? "Pick currency"
+        }
+        
+        cell.textLabel?.text = title
+        cell.textLabel?.textAlignment = .center
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.showCurrencies(for: indexPath)
+    }
+    
 }
 
 // stworzyć tableView, zmienić funckje didtapbutton, 
