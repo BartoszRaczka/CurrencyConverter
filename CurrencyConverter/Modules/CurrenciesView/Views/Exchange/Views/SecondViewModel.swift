@@ -19,7 +19,7 @@ class SecondViewModel {
     }
     
     func showExchange() {
-        exchangeService.getExchange { [weak self] result in
+        exchangeService.getExchange(fromCurrency: "USD", toCurrency: "PLN") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let exchange):

@@ -15,7 +15,7 @@ class MainView: UIView {
     private var button: UIButton!
     private var indicator: UIActivityIndicatorView!
     
-    private let tableView = UITableView() // zadeklarować i stworzyć instancję w setupie lepiej
+    private var tableView: UITableView! // zadeklarować i stworzyć instancję w setupie lepiej
     
     private var viewModel: MainViewModel
     
@@ -48,7 +48,7 @@ class MainView: UIView {
    }
     
     @objc func didTapButton() {
-        
+        viewModel.onButtonTapped?()
     }
     
       func setupButton() {
@@ -83,6 +83,7 @@ class MainView: UIView {
 extension MainView: UITableViewDataSource, UITableViewDelegate {
     
     func setupTableView() {
+        tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
         addSubview(tableView)
@@ -124,4 +125,4 @@ extension MainView: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-// stworzyć tableView, zmienić funckje didtapbutton, 
+

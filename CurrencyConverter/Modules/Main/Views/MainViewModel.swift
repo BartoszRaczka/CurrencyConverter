@@ -12,6 +12,7 @@ class MainViewModel {
     
     private let coordinator: Coordinator
     private let currencyService: CurrencyServiceProtocol
+    private let exchangeService: ExchangeServiceProtocol
     
     
     var fromCurrency: String?
@@ -23,11 +24,13 @@ class MainViewModel {
     
     var onReloadData: (() -> Void)?
 
-    init(coordinator: Coordinator, currencyService: CurrencyServiceProtocol) {
+    init(coordinator: Coordinator, currencyService: CurrencyServiceProtocol, exchangeService: ExchangeServiceProtocol) {
         self.coordinator = coordinator
         self.currencyService = currencyService
+        self.exchangeService = exchangeService
         bindActions()
     }
+    
     
     func reloadData() {
         onReloadData?()
@@ -66,6 +69,18 @@ class MainViewModel {
                 self?.fromCurrency = currency
             case .to:
                 self?.toCurrency = currency
+            }
+        }
+        onButtonTapped = { [weak self] in
+            guard
+                let fromCurrency = self?.fromCurrency,
+                let toCurrency = self?.toCurrency
+            else {
+                return
+            }
+            
+            self?.exchangeService.getExchange(fromCurrency: fromCurrency, toCurrency: toCurrency) { (result) in
+                
             }
         }
     }

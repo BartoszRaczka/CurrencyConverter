@@ -37,7 +37,8 @@ class CustomCell: UICollectionViewCell {
     private func setupLabel() {
         addSubview(cellLabel)
         cellLabel.textColor = .white
-        cellLabel.text = "asd"
+        cellLabel.text = ""
+        cellLabel.textAlignment = .center
         
         cellLabel.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

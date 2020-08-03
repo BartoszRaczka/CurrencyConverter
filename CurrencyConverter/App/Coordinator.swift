@@ -22,7 +22,8 @@ final class Coordinator {
     func start() {
         let viewModel = MainViewModel(
             coordinator: self,
-            currencyService: CurrencyService()
+            currencyService: CurrencyService(),
+            exchangeService: ExchangeService()
         )
         let viewController = MainViewController(with: viewModel)
         
