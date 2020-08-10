@@ -80,7 +80,15 @@ class MainViewModel {
             }
             
             self?.exchangeService.getExchange(fromCurrency: fromCurrency, toCurrency: toCurrency) { (result) in
-                
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let exchangeModel):
+                        self?.coordinator.showExchange(with: exchangeModel)
+                        
+                    case .failure:
+                        print("Failed to show exchange")
+                    }
+                }
             }
         }
     }
