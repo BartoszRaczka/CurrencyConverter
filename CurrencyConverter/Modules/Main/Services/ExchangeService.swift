@@ -30,15 +30,21 @@ class ExchangeService: ExchangeServiceProtocol {
 
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            print(data)
             guard
-            error != nil,
-                let data = data,
-                let exchange = try? JSONDecoder().decode(ExchangeModel.self, from: data)
+            error == nil,
+                let unwrappedData = data
             else {
-                completion(.failure(error ?? NSError()))
+                 completion(.failure(error ?? NSError()))
                 return
             }
-            completion(.success(exchange))
+            do {
+                let exchange = try JSONDecoder().decode(ExchangeModel.self, from: unwrappedData)
+                completion(.success(exchange))
+            } catch {
+                print(error)
+                completion(.failure(error ?? NSError()))
+            }
         })
 
         dataTask.resume()

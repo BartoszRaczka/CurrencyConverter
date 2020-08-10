@@ -10,6 +10,10 @@ import Foundation
 
 struct ExchangeModel: Codable {
     
-    let rates: [String: String]
-    
+    let rates: [String: Rate]
+}
+
+struct Rate: Codable {
+    let currency_name: String
+    let rate: String
 }
